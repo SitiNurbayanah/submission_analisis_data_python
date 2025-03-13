@@ -12,7 +12,13 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import time
 
-main_data = pd.read_csv('main_data.csv')
+# Get the directory where the script is located
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Construct the path to the CSV file
+csv_path = os.path.join(current_dir, 'main_data.csv')
+# Read the CSV file
+main_data = pd.read_csv(csv_path)
+
 main_data["datetime"] = pd.to_datetime(main_data["datetime"])
 main_data["Hour"] = main_data["datetime"].dt.hour
 main_data["month_year"] = main_data["datetime"].dt.to_period("M").astype(str)
