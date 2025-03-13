@@ -145,7 +145,11 @@ with tab4:
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1, max_retries=5)
 
     # Gunakan tempfile atau lokasi yang aman di Streamlit
-    cache_file = "geocoding_cache.csv"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    csv_path = os.path.join(current_dir, 'geocoding_chace.csv')
+
+    cache_file = pd.read_csv(csv_path)
     try:
         if os.path.exists(cache_file):
             cache = pd.read_csv(cache_file)
