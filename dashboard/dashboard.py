@@ -144,12 +144,10 @@ with tab4:
     geolocator = Nominatim(user_agent="geo_lookup", timeout=10)
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1, max_retries=5)
 
-    # Gunakan tempfile atau lokasi yang aman di Streamlit
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+   current_dir = os.path.dirname(os.path.abspath(__file__))  # Ambil folder tempat script berjalan
+   csv_path = os.path.join(current_dir, 'geocoding_chace.csv')  # File ada di folder yang sama dengan script
 
-    csv_path = os.path.join(current_dir, 'geocoding_chace.csv')
-
-    cache_file = pd.read_csv(csv_path)
+   cache_file = pd.read_csv(csv_path)  # Membaca CSV
     try:
         if os.path.exists(cache_file):
             cache = pd.read_csv(cache_file)
