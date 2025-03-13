@@ -144,9 +144,8 @@ with tab4:
     geolocator = Nominatim(user_agent="geo_lookup", timeout=10)
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1, max_retries=5)
 
-    csv_path = os.path.join('dashboard', 'geocoding_chace.csv')
-
-    cache_file = pd.read_csv(csv_path)  # Membaca CSV
+    # Gunakan tempfile atau lokasi yang aman di Streamlit
+    cache_file = "geocoding_cache.csv"
     try:
         if os.path.exists(cache_file):
             cache = pd.read_csv(cache_file)
