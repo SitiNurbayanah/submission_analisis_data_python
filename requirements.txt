@@ -1,6 +1,15 @@
-1. Library untuk Manajemen File & Sistem Operasi = os, glob
-2. Library untuk Analisis Data & Perhitungan Numerik = numpy, pandas
-3. Library untuk Visualisasi Data = matplotlib.pyplot, seaborn
-4. Library untuk Geospasial & Pemetaan = geopandas, contextily, matplotlib.colors.LinearSegmentedColormap
-5. Library untuk Geocoding (Mendapatkan Koordinat Lokasi) = geopy.geocoders.Nominatim, geopy.extra.rate_limiter.RateLimiter
-6. Library untuk Manajemen Waktu = time
+# Data processing and visualization
+pandas
+geopandas
+matplotlib
+numpy
+contextily
+
+# Geocoding
+geopy
+
+# Streamlit for dashboard
+streamlit
+
+# Other utilities
+tqdm
