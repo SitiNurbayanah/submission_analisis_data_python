@@ -4,6 +4,7 @@ geopandas
 matplotlib
 numpy
 contextily
+seaborn
 
 # Geocoding
 geopy
